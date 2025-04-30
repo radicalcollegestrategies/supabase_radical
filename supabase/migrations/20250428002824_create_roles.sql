@@ -30,12 +30,31 @@ grant insert, update, delete on roles to authenticated;
 -- Notes  : If a user has multiple roles, they will have multiple rows in this table
 create table public.radical_user (
   email text not null,
-  role text not null,
-  created_at timestamp with time zone not null default now(),
-  constraint radical_user_pkey primary key (email, role),
-  constraint radical_user_role_fkey foreign KEY (role) references roles (role)
+  roles text[] null,
+  fname text null,
+  lname text null,
+  phone integer null,
+  email2 text null,
+  created timestamp without time zone not null default now(),
+  constraint radical_user_pkey primary key (email)
 ) TABLESPACE pg_default;
 
 grant all privileges on radical_user to postgres, service_role;
 grant select on radical_user to anon, authenticated;
 grant insert, update, delete on radical_user to authenticated;
+
+create table public.student (
+  email text not null,
+  parent1 text not null,
+  parent2 text null,
+  counselor text not null,
+  gradyear integer not null,
+  notes text null,
+  created timestamp with time zone not null default now(),
+  constraint student_pkey primary key (email),
+  constraint student_email_fkey foreign KEY (email) references radical_user (email),
+  constraint student_parent1_fkey foreign KEY (parent1) references radical_user (email),
+  constraint student_parent2_fkey foreign KEY (parent2) references radical_user (email),
+  constraint student_counselor_fkey foreign KEY (counselor) references radical_user (email)
+) TABLESPACE pg_default;
+-- TODO grant statements for student table

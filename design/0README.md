@@ -3,7 +3,7 @@
 Roles:
 - Backend
    - [admin](admin.md) (includes bootstrapping)
-   - onboarder
+   - [onboarder] (onboarder.md)
 
 - Customer
    - student_hs
@@ -18,6 +18,14 @@ Roles:
 ## 
 
 ```mermaid
-
+This is for fun now
 ```
+## Tables
+- Existing tables: [seed.sql](../supabase/seed.sql)
+- Planned  tables: [tables.sql](tables.sql)
 
+## Notes
+- Authentication vs AuthoRization:
+   - Authentication --> You are <name>
+   - AuthoRization --> Role. What all are you authorized to do
+- 
