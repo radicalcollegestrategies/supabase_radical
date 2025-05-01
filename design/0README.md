@@ -15,11 +15,6 @@ Roles:
    - counsel_hs
    - editor
 
-## 
-
-```mermaid
-This is for fun now
-```
 ## Tables
 - Existing tables: [seed.sql](../supabase/seed.sql)
 - Planned  tables: [tables.sql](tables.sql)
@@ -28,4 +23,9 @@ This is for fun now
 - Authentication vs AuthoRization:
    - Authentication --> You are <name>
    - AuthoRization --> Role. What all are you authorized to do
-- 
+
+## Diagrams
+
+```mermaid
+This is for fun now
+```

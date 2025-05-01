@@ -18,7 +18,45 @@
 1. Edit any field
 1. Add roles to user
 1. Delete roles from users
-1. Delete user --> Moves to archive
+1. Delete user --> Moves to archive (TODO: Should this be onboarder?)
 
-## Screen: Payments
-- Different criteria, eg YTD, booked this yr, total booked etc
+---
+
+# Onboarding Screens
+## OVERALL: TODO: NEED MORE CLARITY FOR THIS PAGE
+
+## Screen: Student Add
+- @@@TABLE: student(student_email, parent1_email, parent2_email)
+
+## Screen: Student List + Edit
+- List all students. Sort / filter by attributes
+- Edit any details
+
+## Screen: Expected Payments
+- Read only: Date, Student, $$
+    - Sort by date, search by student etc
+- Button to send email reminder
+
+## Record a Payment (same or diff screen than above)
+- @@@TABLE: payments, payments_due
+- Date, $$, Student
+    - Should be able to check off an expected payment
+    - Or split / edit if partial payment
+
+## Screen: Student Onboarding
+- @@@TABLE: subscription
+- Assign student to course
+- Generate PDF and send out docusign
+- When complete
+    - Counselor communication
+    - Skool enroll
+    - Automate skool acceptance
+
+## Screen: Student Deboarding / Refund
+- Some may auto-expire
+- End all payments due
+- Negative payment for refund issued
+- Mark subscription as expired
+- Skool remove
+- Send email "this contract has ended"
+- Check "deboarding protocol"
