@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.3",
+    "@supabase/supabase-js": "^2.49.4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -14,7 +14,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "start:local": "set REACT_APP_ENV=local && set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "start:dev": "set REACT_APP_ENV=dev && set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": "src"
   }
 }
