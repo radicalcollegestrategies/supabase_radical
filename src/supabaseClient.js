@@ -1,13 +1,16 @@
 import { createClient } from '@supabase/supabase-js'
 
-const isLocal = process.env.REACT_APP_ENV === 'local'
+let supabaseUrl, supabaseAnonKey
 
-const supabaseUrl = isLocal 
-  ? process.env.REACT_APP_LOCAL_SUPABASE_URL 
-  : process.env.REACT_APP_DEV_SUPABASE_URL
-
-const supabaseAnonKey = isLocal 
-  ? process.env.REACT_APP_LOCAL_SUPABASE_ANON_KEY 
-  : process.env.REACT_APP_DEV_SUPABASE_ANON_KEY
+switch (process.env.REACT_APP_ENV) {
+  case 'dev':
+    supabaseUrl = process.env.REACT_APP_DEV_SUPABASE_URL
+    supabaseAnonKey = process.env.REACT_APP_DEV_SUPABASE_ANON_KEY
+  case 'local':
+  default:
+      supabaseUrl = process.env.REACT_APP_LOCAL_SUPABASE_URL
+    supabaseAnonKey = process.env.REACT_APP_LOCAL_SUPABASE_ANON_KEY
+    break
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
