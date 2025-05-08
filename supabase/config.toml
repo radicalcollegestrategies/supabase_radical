@@ -103,8 +103,7 @@ file_size_limit = "50MiB"
 
 [auth]
 # General auth settings
-# Allow/disallow new user signups to your project --> WAS TRUE
-enable_signup = false
+enable_signup = true
 # Allow/disallow anonymous sign-ins to your project.
 enable_anonymous_sign_ins = false
 enable_manual_linking = false

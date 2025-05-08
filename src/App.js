@@ -8,7 +8,7 @@ function App() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } })=> {
       setUser(session?.user ?? null)
     })
 
